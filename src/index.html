@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Document</title>
+  </head>
+  <body class="bg-[#f6f6f7] dark:bg-[#323232]">
+    <div class="mx-auto container">
+      <header
+        class="shadow-2xl dark:shadow-blue-300 bg-amber-500 dark:bg-blue-700 text-black dark:text-white rounded-b-2xl py-5 font-extrabold"
+      >
+        <button
+          id="demo"
+          class="cursor-pointer bg-[#f6f6f7] dark:bg-[#323232] px-6 py-3 rounded-r-xl dark:text-white font-medium group"
+        >
+          <div class="relative overflow-hidden">
+            <p
+              class="group-hover:-translate-y-7 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]"
+            >
+              light
+            </p>
+            <p
+              class="absolute top-7 left-0 group-hover:top-0 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]"
+            >
+              dark
+            </p>
+          </div>
+        </button>
+
+        <h1 class="text-3xl text-center font-serif">Todo App</h1>
+      </header>
+      <main>
+        <div
+          class="input-section bg-white dark:bg-gray-700 dark:shadow-blue-300 w-full mt-12 p-8 shadow-2xl rounded-2xl"
+        >
+          <input
+            type="text"
+            id="tesk-input"
+            class="border border-amber-400 dark:border-blue-500 dark:text-white my-2 md:w-[45%] w-[100%] rounded-md py-2 px-3 mx-2"
+            placeholder="Add todo ..."
+          />
+          <input
+            type="date"
+            id="date-input"
+            class="border border-amber-400 dark:border-blue-500 dark:text-white my-2 md:w-[45%] w-[100%] rounded-md py-2 px-3 mx-2"
+          />
+          <button
+            id="add-button"
+            type="submit"
+            class="bg-amber-400 cursor-pointer hover:opacity-80 text-black dark:bg-blue-600 dark:text-white my-2 md:w-[5%] w-[100%] py-2 rounded-md"
+          >
+            Add
+          </button>
+          <button
+            id="edit-button"
+            class="bg-amber-400 cursor-pointer hover:opacity-80 text-black dark:bg-blue-600 dark:text-white my-2 md:w-[5%] w-[100%] py-2 rounded-md"
+          >
+            Edit
+          </button>
+
+          <div class="pt-14 flex justify-between">
+            <div class="todos-operator">
+              <button
+                data-filter="all"
+                class="filter-todos cursor-pointer hover:opacity-80 bg-amber-400 dark:bg-blue-600 dark:text-white rounded-md mx-1 px-5 py-1"
+              >
+                All
+              </button>
+              <button
+                data-filter="pending"
+                class="filter-todos cursor-pointer hover:opacity-80 bg-amber-400 dark:bg-blue-600 dark:text-white rounded-md mx-1 px-5 py-1"
+              >
+                Pending
+              </button>
+              <button
+                data-filter="completed"
+                class="filter-todos cursor-pointer hover:opacity-80 bg-amber-400 dark:bg-blue-600 dark:text-white rounded-md mx-1 px-5 py-1"
+              >
+                Completed
+              </button>
+            </div>
+            <div class="">
+              <button
+                id="delete-all-button"
+                class="bg-red-600 cursor-pointer hover:opacity-80 text-white py-1 px-3 rounded-md"
+              >
+                Delete All
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="alert-message" class="my-2"></div>
+        <div>
+          <table class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th
+                    class="border-r-1 border-[#f6f6f7] dark:border-[#323232] rounded-tl-xl bg-[#e6e6e6] text-xl font-medium dark:text-white dark:bg-blue-400 p-1"
+                  >
+                    Task
+                  </th>
+                  <th
+                    class="border-r-1 border-[#f6f6f7] dark:border-[#323232] bg-[#e6e6e6] text-xl font-medium dark:text-white dark:bg-blue-400 p-1"
+                  >
+                    Date
+                  </th>
+                  <th
+                    class="border-r-1 border-[#f6f6f7] dark:border-[#323232] bg-[#e6e6e6] text-xl font-medium dark:text-white dark:bg-blue-400 p-1"
+                  >
+                    Status
+                  </th>
+                  <th
+                    class="rounded-tr-xl bg-[#e6e6e6] text-xl font-medium dark:text-white dark:bg-blue-400 p-1"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </table>
+        </div>
+      </main>
+      <div class="w-48 mx-auto my-24">
+        <!-- From Uiverse.io by Juanes200122 -->
+        <svg xmlns="http://www.w3.org/2000/svg" height="200" width="200">
+          <g style="order: -1">
+            <polygon
+              transform="rotate(45 100 100)"
+              stroke-width="1"
+              class="stroke-amber-500 dark:stroke-blue-600"
+              fill="none"
+              points="70,70 148,50 130,130 50,150"
+              id="bounce"
+            ></polygon>
+            <polygon
+              transform="rotate(45 100 100)"
+              stroke-width="1"
+              class="stroke-amber-500 dark:stroke-blue-600"
+              fill="none"
+              points="70,70 148,50 130,130 50,150"
+              id="bounce2"
+            ></polygon>
+            <polygon
+              transform="rotate(45 100 100)"
+              stroke-width="2"
+              stroke=""
+              class="fill-[#414750] dark:fill-[#555a62]"
+              points="70,70 150,50 130,130 50,150"
+            ></polygon>
+            <polygon
+              stroke-width="2"
+              stroke=""
+              fill="url(#gradiente)"
+              points="100,70 150,100 100,130 50,100"
+            ></polygon>
+            <defs>
+              <linearGradient y2="100%" x2="10%" y1="0%" x1="0%" id="gradiente">
+                <stop
+                  style="stop-color: #1e2026; stop-opacity: 1"
+                  offset="20%"
+                ></stop>
+                <stop
+                  style="stop-opacity: 1"
+                  class="fill-[#414750] dark:fill-[#555a62]"
+                  offset="60%"
+                ></stop>
+              </linearGradient>
+            </defs>
+            <polygon
+              transform="translate(20, 31)"
+              stroke-width="2"
+              stroke=""
+              class="fill-amber-500 dark:fill-blue-500"
+              points="80,50 80,75 80,99 40,75"
+            ></polygon>
+            <polygon
+              transform="translate(20, 31)"
+              stroke-width="2"
+              class="stroke-2"
+              fill="url(#gradiente2)"
+              points="40,-40 80,-40 80,99 40,75"
+            ></polygon>
+            <defs>
+              <linearGradient
+                y2="100%"
+                x2="0%"
+                y1="-17%"
+                x1="10%"
+                id="gradiente2"
+              >
+                <stop
+                  style="stop-color: #d3a51000; stop-opacity: 1"
+                  offset="20%"
+                ></stop>
+                <stop
+                  style="stop-opacity: 1"
+                  class="fill-amber-500 dark:fill-blue-600"
+                  offset="100%"
+                  id="animatedStop"
+                ></stop>
+              </linearGradient>
+            </defs>
+            <polygon
+              transform="rotate(180 100 100) translate(20, 20)"
+              stroke-width="2"
+              class="fill-amber-400 dark:fill-blue-600"
+              points="80,50 80,75 80,99 40,75"
+            ></polygon>
+            <polygon
+              transform="rotate(0 100 100) translate(60, 20)"
+              stroke-width="2"
+              stroke=""
+              fill="url(#gradiente3)"
+              points="40,-40 80,-40 80,85 40,110.2"
+            ></polygon>
+            <defs>
+              <linearGradient
+                y2="100%"
+                x2="10%"
+                y1="0%"
+                x1="0%"
+                id="gradiente3"
+              >
+                <stop
+                  style="stop-color: #d3a51000; stop-opacity: 1"
+                  offset="20%"
+                ></stop>
+                <stop
+                  style="stop-color: #d3a51054; stop-opacity: 1"
+                  class="hover:bg-blue-400"
+                  offset="100%"
+                  id="animatedStop"
+                ></stop>
+              </linearGradient>
+            </defs>
+            <polygon
+              transform="rotate(45 100 100) translate(80, 95)"
+              stroke-width="2"
+              class="fill-amber-200 dark:fill-blue-300"
+              points="5,0 5,5 0,5 0,0"
+              id="particles"
+            ></polygon>
+            <polygon
+              transform="rotate(45 100 100) translate(80, 55)"
+              class="fill-[#ccb069] storke-2 dark:fill-blue-300"
+              points="6,0 6,6 0,6 0,0"
+              id="particles"
+            ></polygon>
+            <polygon
+              transform="rotate(45 100 100) translate(70, 80)"
+              class="fill-white stroke-2 dark:fill-blue-300"
+              points="2,0 2,2 0,2 0,0"
+              id="particles"
+            ></polygon>
+            <polygon
+              class="fill-[#06080d] dark:fill-[#3f444d] stroke-2"
+              points="29.5,99.8 100,142 100,172 29.5,130"
+            ></polygon>
+            <polygon
+              transform="translate(50, 92)"
+              class="fill-[#1f2127] stroke-2 dark:fill-[#272b33]"
+              points="50,50 120.5,8 120.5,35 50,80"
+            ></polygon>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>
